@@ -1,0 +1,8 @@
+  version: 1.2
+  workflows:
+    - subclass: WDL
+      primaryDescriptorPath: /PharmCAP_Pipeline.wdl
+      name: PharmCAP_Pipeline
+      readMePath: /README.md
+      testParameterFiles:
+        - /parameters.json
