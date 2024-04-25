@@ -1,0 +1,20 @@
+
+1. baixar a imagem docker:
+--> docker pull pgkb/pharmcat
+
+2. Rodar o container:
+--> docker run -it pgkb/pharmcat /bin/bash
+
+3. Da minha maquina (novo bash), ver status do container:
+--> docker ps 
+
+4. Copiar o arquivo vcf para dentro do container:
+--> docker cp /Users/andrerico/Works/Projects/dockstore-PharmCAP/test_1/sample.vcf 000610a4656:/pharmcat/data
+
+5. Voltar para o bash do container e rodar o PharmCAP:
+/pharmcat > pharmcat_pipeline data/sample.vcf
+
+6. os arquivos de resultados estaram disponiveis no diretorio data.
+
+7. Copiar os aqruivos de resultados para minha maquina:
+➜ docker cp 000610a4656:/pharmcat/data/ /Users/andrerico/Works/Projects/dockstore-PharmCAP/test_1/saida/

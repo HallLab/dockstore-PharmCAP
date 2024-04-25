@@ -1,0 +1,28 @@
+
+
+
+
+
+Para publicar esse workflow no Dockstore:
+-----------------------------------------
+Registre-se e faça login no Dockstore.
+Prepare seus arquivos de workflow e um arquivo README.md para documentação.
+Faça o upload ou conecte seu repositório Git (GitHub, GitLab, Bitbucket) ao Dockstore.
+Registre o workflow no Dockstore, apontando para o repositório onde seus arquivos de workflow estão armazenados.
+Certifique-se de que a documentação do workflow esteja clara, especialmente sobre como os usuários devem preparar suas entradas e o que esperar das saídas. Se precisar de mais ajuda para configurar seu workflow no Dockstore ou qualquer outra plataforma, estou aqui para ajudar!
+
+
+test:
+dockstore workflow launch --local-entry [path/to/your_workflow.wdl] --json [path/to/your_inputs.json]
+
+dockstore-PharmCAP on  main [?] via 🅒 base took 13.7s 
+➜ dockstore workflow launch --local-entry pharmcat_pipeline.wdl --json sample_config.json
+
+dockstore-PharmCAP/test_1 on  main [?] via 🅒 base took 29.5s 
+➜ dockstore workflow launch --local-entry script_5.wdl --json parametros_5.json 
+os resultados estao em:
+➜ cd /private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/8701567027475732945/cromwell-executions
+
+Caso o wf estiver no git:
+dockstore workflow launch --entry github.com/seu_usuario/seu_repositorio/PharmCATWorkflow:versao --json caminho_para_seu_arquivo.json
+

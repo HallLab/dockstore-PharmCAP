@@ -1,0 +1,109 @@
+	[2024-04-25 12:03:20,78] [info] Running with database db.url = jdbc:hsqldb:mem:f11c7fd3-15df-42fb-ba08-376dab5eb79e;shutdown=false;hsqldb.tx=mvcc
+	[2024-04-25 12:03:21,76] [info] Running migration RenameWorkflowOptionsInMetadata with a read batch size of 100000 and a write batch size of 100000
+	[2024-04-25 12:03:21,77] [info] [RenameWorkflowOptionsInMetadata] 100%
+	[2024-04-25 12:03:21,85] [info] Running with database db.url = jdbc:hsqldb:mem:8e71d66f-649e-4f99-8a40-41ef4a92ea72;shutdown=false;hsqldb.tx=mvcc
+	[2024-04-25 12:03:22,00] [info] Slf4jLogger started
+	[2024-04-25 12:03:22,05] [info] Workflow heartbeat configuration:
+	{
+	  "cromwellId" : "cromid-7b5f54f",
+	  "heartbeatInterval" : "2 minutes",
+	  "ttl" : "10 minutes",
+	  "failureShutdownDuration" : "5 minutes",
+	  "writeBatchSize" : 10000,
+	  "writeThreshold" : 10000
+	}
+	[2024-04-25 12:03:22,07] [info] Metadata summary refreshing every 1 second.
+	[2024-04-25 12:03:22,07] [info] No metadata archiver defined in config
+	[2024-04-25 12:03:22,07] [info] No metadata deleter defined in config
+	[2024-04-25 12:03:22,07] [info] KvWriteActor configured to flush with batch size 200 and process rate 5 seconds.
+	[2024-04-25 12:03:22,08] [info] WriteMetadataActor configured to flush with batch size 200 and process rate 5 seconds.
+	[2024-04-25 12:03:22,08] [info] CallCacheWriteActor configured to flush with batch size 100 and process rate 3 seconds.
+	[2024-04-25 12:03:22,10] [info] JobRestartCheckTokenDispenser - Distribution rate: 50 per 1 seconds.
+	[2024-04-25 12:03:22,11] [info] JobExecutionTokenDispenser - Distribution rate: 20 per 10 seconds.
+	[2024-04-25 12:03:22,13] [info] SingleWorkflowRunnerActor: Version 84
+	[2024-04-25 12:03:22,13] [info] SingleWorkflowRunnerActor: Submitting workflow
+	[2024-04-25 12:03:22,15] [info] Unspecified type (Unspecified version) workflow faee4489-07b4-451a-8797-43bd1b8ae52c submitted
+	[2024-04-25 12:03:22,16] [info] SingleWorkflowRunnerActor: Workflow submitted [38;5;2mfaee4489-07b4-451a-8797-43bd1b8ae52c[0m
+	[2024-04-25 12:03:22,16] [info] 1 new workflows fetched by cromid-7b5f54f: faee4489-07b4-451a-8797-43bd1b8ae52c
+	[2024-04-25 12:03:22,16] [info] WorkflowManagerActor: Starting workflow [38;5;2mfaee4489-07b4-451a-8797-43bd1b8ae52c[0m
+	[2024-04-25 12:03:22,16] [info] WorkflowManagerActor: Successfully started WorkflowActor-faee4489-07b4-451a-8797-43bd1b8ae52c
+	[2024-04-25 12:03:22,16] [info] Retrieved 1 workflows from the WorkflowStoreActor
+	[2024-04-25 12:03:22,17] [info] WorkflowStoreHeartbeatWriteActor configured to flush with batch size 10000 and process rate 2 minutes.
+	[2024-04-25 12:03:22,19] [info] MaterializeWorkflowDescriptorActor [[38;5;2mfaee4489[0m]: Parsing workflow as WDL 1.0
+	[2024-04-25 12:03:22,36] [info] MaterializeWorkflowDescriptorActor [[38;5;2mfaee4489[0m]: Call-to-Backend assignments: pharmcat_workflow.run_pharmcat -> Local
+	[2024-04-25 12:03:22,42] [[38;5;220mwarn[0m] Local [[38;5;2mfaee4489[0m]: Key/s [memory, cpu] is/are not supported by backend. Unsupported attributes will not be part of job executions.
+	[2024-04-25 12:03:24,49] [info] WorkflowExecutionActor-faee4489-07b4-451a-8797-43bd1b8ae52c [[38;5;2mfaee4489[0m]: Starting pharmcat_workflow.run_pharmcat
+	[2024-04-25 12:03:27,12] [info] Not triggering log of restart checking token queue status. Effective log interval = None
+	[2024-04-25 12:03:27,13] [info] Not triggering log of execution token queue status. Effective log interval = None
+	[2024-04-25 12:03:32,14] [info] Assigned new job execution tokens to the following groups: faee4489: 1
+	[2024-04-25 12:03:33,14] [[38;5;220mwarn[0m] BackgroundConfigAsyncJobExecutionActor [[38;5;2mfaee4489[0mpharmcat_workflow.run_pharmcat:NA:1]: Unrecognized runtime attribute keys: cpu, memory
+	[2024-04-25 12:03:33,17] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mfaee4489[0mpharmcat_workflow.run_pharmcat:NA:1]: [38;5;5mmkdir -p data
+	cp /cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/inputs/1606806168/sample.vcf data/sample.vcf
+	pharmcat_pipeline data/sample.vcf[0m
+	[2024-04-25 12:03:33,20] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mfaee4489[0mpharmcat_workflow.run_pharmcat:NA:1]: executing: # make sure there is no preexisting Docker CID file
+	rm -f /private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/docker_cid
+	# run as in the original configuration without --rm flag (will remove later)
+	docker run \
+	  --cidfile /private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/docker_cid \
+	  -i \
+	   \
+	  --entrypoint /bin/bash \
+	  -v /private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat:/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat:delegated \
+	  pgkb/pharmcat@sha256:3c1c8da994311b9534d608f837dc1db5549e5365f0f05b30eafec589460f6e58 /cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/script
+	
+	# get the return code (working even if the container was detached)
+	rc=$(docker wait [38;5;5mcat /private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/docker_cid[0m)
+	
+	# remove the container after waiting
+	docker rm [38;5;5mcat /private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/docker_cid[0m
+	
+	# return exit code
+	exit $rc
+	[2024-04-25 12:03:37,10] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mfaee4489[0mpharmcat_workflow.run_pharmcat:NA:1]: job id: 77955
+	[2024-04-25 12:03:37,10] [info] BackgroundConfigAsyncJobExecutionActor [[38;5;2mfaee4489[0mpharmcat_workflow.run_pharmcat:NA:1]: Status change from - to Done
+	[2024-04-25 12:03:38,79] [info] WorkflowExecutionActor-faee4489-07b4-451a-8797-43bd1b8ae52c [[38;5;2mfaee4489[0m]: Workflow pharmcat_workflow complete. Final Outputs:
+	{
+	  "pharmcat_workflow.results": "[\"/private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/glob-ddfffde5fbd23d9394d3c38faef52e41/sample.match.json\", \"/private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/glob-ddfffde5fbd23d9394d3c38faef52e41/sample.phenotype.json\", \"/private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/glob-ddfffde5fbd23d9394d3c38faef52e41/sample.preprocessed.vcf.bgz\", \"/private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/glob-ddfffde5fbd23d9394d3c38faef52e41/sample.report.html\", \"/private/var/folders..."
+	}
+	[2024-04-25 12:03:42,12] [info] WorkflowManagerActor: Workflow actor for faee4489-07b4-451a-8797-43bd1b8ae52c completed with status 'Succeeded'. The workflow will be removed from the workflow store.
+	[2024-04-25 12:03:49,62] [info] SingleWorkflowRunnerActor workflow finished with status 'Succeeded'.
+	{
+	  "outputs": {
+	    "pharmcat_workflow.results": ["/private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/glob-ddfffde5fbd23d9394d3c38faef52e41/sample.match.json", "/private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/glob-ddfffde5fbd23d9394d3c38faef52e41/sample.phenotype.json", "/private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/glob-ddfffde5fbd23d9394d3c38faef52e41/sample.preprocessed.vcf.bgz", "/private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/glob-ddfffde5fbd23d9394d3c38faef52e41/sample.report.html", "/private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/glob-ddfffde5fbd23d9394d3c38faef52e41/sample.vcf.bgz", "/private/var/folders/06/f05rc_9x21nfs2142bf0fmcr0000gn/T/15091278260550255077/cromwell-executions/pharmcat_workflow/faee4489-07b4-451a-8797-43bd1b8ae52c/call-run_pharmcat/execution/glob-ddfffde5fbd23d9394d3c38faef52e41/sample.vcf.bgz.csi"]
+	  },
+	  "id": "faee4489-07b4-451a-8797-43bd1b8ae52c"
+	}
+	[2024-04-25 12:03:52,13] [info] Workflow polling stopped
+	[2024-04-25 12:03:52,13] [info] 0 workflows released by cromid-7b5f54f
+	[2024-04-25 12:03:52,14] [info] Shutting down WorkflowStoreActor - Timeout = 5 seconds
+	[2024-04-25 12:03:52,14] [info] Shutting down WorkflowLogCopyRouter - Timeout = 5 seconds
+	[2024-04-25 12:03:52,14] [info] Shutting down JobExecutionTokenDispenser - Timeout = 5 seconds
+	[2024-04-25 12:03:52,14] [info] Aborting all running workflows.
+	[2024-04-25 12:03:52,14] [info] JobExecutionTokenDispenser stopped
+	[2024-04-25 12:03:52,14] [info] WorkflowStoreActor stopped
+	[2024-04-25 12:03:52,14] [info] WorkflowLogCopyRouter stopped
+	[2024-04-25 12:03:52,14] [info] Shutting down WorkflowManagerActor - Timeout = 3600 seconds
+	[2024-04-25 12:03:52,14] [info] WorkflowManagerActor: All workflows finished
+	[2024-04-25 12:03:52,14] [info] WorkflowManagerActor stopped
+	[2024-04-25 12:03:52,21] [info] Connection pools shut down
+	[2024-04-25 12:03:52,21] [info] Shutting down SubWorkflowStoreActor - Timeout = 1800 seconds
+	[2024-04-25 12:03:52,21] [info] Shutting down JobStoreActor - Timeout = 1800 seconds
+	[2024-04-25 12:03:52,21] [info] Shutting down CallCacheWriteActor - Timeout = 1800 seconds
+	[2024-04-25 12:03:52,21] [info] Shutting down ServiceRegistryActor - Timeout = 1800 seconds
+	[2024-04-25 12:03:52,21] [info] SubWorkflowStoreActor stopped
+	[2024-04-25 12:03:52,21] [info] Shutting down DockerHashActor - Timeout = 1800 seconds
+	[2024-04-25 12:03:52,21] [info] Shutting down IoProxy - Timeout = 1800 seconds
+	[2024-04-25 12:03:52,21] [info] CallCacheWriteActor Shutting down: 0 queued messages to process
+	[2024-04-25 12:03:52,21] [info] JobStoreActor stopped
+	[2024-04-25 12:03:52,21] [info] CallCacheWriteActor stopped
+	[2024-04-25 12:03:52,21] [info] WriteMetadataActor Shutting down: 0 queued messages to process
+	[2024-04-25 12:03:52,21] [info] KvWriteActor Shutting down: 0 queued messages to process
+	[2024-04-25 12:03:52,21] [info] DockerHashActor stopped
+	[2024-04-25 12:03:52,21] [info] IoProxy stopped
+	[2024-04-25 12:03:52,21] [info] ServiceRegistryActor stopped
+	[2024-04-25 12:03:52,21] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+	[2024-04-25 12:03:52,21] [info] Shutting down connection pool: curAllocated=0 idleQueues.size=0 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+	[2024-04-25 12:03:52,21] [info] Shutting down connection pool: curAllocated=1 idleQueues.size=1 waitQueue.size=0 maxWaitQueueLimit=256 closed=false
+	[2024-04-25 12:03:52,21] [info] Database closed
+	[2024-04-25 12:03:52,21] [info] Stream materializer shut down
+	[2024-04-25 12:03:52,21] [info] WDL HTTP import resolver closed
